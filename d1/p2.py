@@ -1,5 +1,4 @@
 input = open("input.txt", "r").read()
-
 lines = input.split('\n')
 
 words = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', '1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -44,15 +43,4 @@ for i in lines:
     last = find_last(i)
     total += (word_to_dig(first)*10) + word_to_dig(last)
 
-print(total)
-
-
-total = 0
-nums = []
-for j in i:
-    if j.isdigit():
-        nums += j
-part = int(nums[0] + nums[-1])
-print(part)
-total += part
 print(total)
