@@ -47,19 +47,12 @@ for i in lines:
 print(total)
 
 
-# total = 0
-# for i in lines:
-#     min_pos = 10000000
-#     for w in words:
-#         pos = i.find(w)
-#         if pos != -1:
-#             if pos < min_pos:
-#                 min_pos = pos
-    # nums = []
-    # for j in i:
-    #     if j.isdigit():
-    #         nums += j
-    # part = int(nums[0] + nums[-1])
-    # print(part)
-    # total += part
+total = 0
+nums = []
+for j in i:
+    if j.isdigit():
+        nums += j
+part = int(nums[0] + nums[-1])
+print(part)
+total += part
 print(total)
