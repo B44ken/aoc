@@ -1,6 +1,10 @@
-import re
+import sys, re
 
-input = open('input.txt', 'r').read()
+if len(sys.argv) < 2:
+    print('python3 sol.py <input file>')
+    exit(1)
+
+input = open(sys.argv[1], 'r').read()
 lines = input.split('\n')
 
 def get_cubes(input, color):
@@ -23,4 +27,4 @@ for i in lines:
     #     total += id
     total += red * green * blue
 
-print(total)
+print(f'{sys.argv[1]} = {total}')

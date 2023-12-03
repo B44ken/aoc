@@ -1,0 +1,1 @@
+py sol.py example.txt; py sol.py input.txt
