@@ -12,8 +12,8 @@ lines = ['.' * len(lines[0])] + lines + ['.' * len(lines[0])]
 for i in range(len(lines)):
     lines[i] = '.' + lines[i] + '...'
 
-
-gears_touching = {}
+# gears_touching = {}
+total = 0
 
 for i in range(len(lines)):
     dig = 0
@@ -25,22 +25,27 @@ for i in range(len(lines)):
             dig = dig * 10 + int(lines[i][j])
             surround = surround + [[i-1, j-1], [i, j-1], [i+1, j-1], [i-1, j], [i+1, j], [i-1, j+1], [i, j+1], [i+1, j+1]]
         else:
-            index = ''
             for s in surround:
-                if lines[s[0]][s[1]] == '*':
+                if not lines[s[0]][s[1]].isdigit() and lines[s[0]][s[1]] != '.':
                     part = s
-                    index = str(s[0]) + ',' + str(s[1])
-            if index:
-                if index not in gears_touching:
-                    gears_touching[index] = []
-                gears_touching[index] += [dig]
+            if part:
+                total += dig
+            # index = ''
+            # for s in surround:
+            #     if lines[s[0]][s[1]] == '*':
+            #         part = s
+            #         index = str(s[0]) + ',' + str(s[1])
+            # if index:
+            #     if index not in gears_touching:
+            #         gears_touching[index] = []
+            #     gears_touching[index] += [dig]
             surround = []
             part = []
             dig = 0
 
-for key in gears_touching:
-    if len(gears_touching[key]) == 2:
-        total += gears_touching[key][0] * gears_touching[key][1]
+# for key in gears_touching:
+#     if len(gears_touching[key]) == 2:
+#         total += gears_touching[key][0] * gears_touching[key][1]
 
 file_name = sys.argv[1].replace(".txt", "")
 file_padding = " " * (10 - len(file_name))
