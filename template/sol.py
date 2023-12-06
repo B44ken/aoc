@@ -5,9 +5,10 @@ if len(sys.argv) < 2:
     exit(1)
 
 input = open(sys.argv[1], 'r').read()
-lines = input.split('\n\n')
+lines = input.split('\n')
+total = 0
 
-for line in lines:
+for l in lines:
     pass
 
 file_name = sys.argv[1].replace(".txt", "")
