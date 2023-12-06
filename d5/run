@@ -1,0 +1,4 @@
+for i in {0..9}
+do
+    pypy3 -u sol.py input.txt $i > output_$i.txt &
+done

@@ -5,14 +5,13 @@ if len(sys.argv) < 2:
     exit(1)
 
 input = open(sys.argv[1], 'r').read()
-lines = input.split('\n')
+lines = input.split('\n\n')
 
-total = 0
-for i in lines:
-    pass
+seeds = [int(i) for i in re.findall(r'\d+', lines[0])]
 
-print(total)
+# for map in lines:
+#     print(map)
 
 file_name = sys.argv[1].replace(".txt", "")
-file_padding = " " * 20 - len(file_name)
+file_padding = " " * (10 - len(file_name))
 print(f'{file_name}{file_padding}{total}')
